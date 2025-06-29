@@ -105,6 +105,9 @@ config = {
 
 
   -- font
+  --font = wezterm.font("Iosevka Custom"),
+  --font = wezterm.font("Agave Nerd Font Mono"),
+  font = wezterm.font("CaskaydiaCove Nerd Font Mono"),
   font_size = 12.0,
  
   -- color
