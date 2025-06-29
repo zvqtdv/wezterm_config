@@ -47,7 +47,7 @@ config.window_padding = {
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
--- config.tab_bar_at_bottom = true
+--config.tab_bar_at_bottom = true
 
 -- config.inactive_pane_hsb = {
 -- 	saturation = 0.0,
@@ -118,23 +118,28 @@ config.keys = {
   
   -- tmux
 
-  -- 分割
+  -- pane
+  { key = "t", mods = "ALT",    action = wezterm.action.SpawnTab "DefaultDomain" },
+  { key = "m", mods = "ALT",    action = wezterm.action.ShowTabNavigator },
+  { key = "w", mods = "ALT",    action = wezterm.action.CloseCurrentPane { confirm = true } },
+
+  -- split
   { key = "v", mods = "ALT",    action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" } },
   { key = "h", mods = "ALT",    action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" } },
  
-  -- 切换
+  -- activate
   { key = "y", mods = "ALT",    action = wezterm.action.ActivatePaneDirection "Left" },
   { key = "n", mods = "ALT",    action = wezterm.action.ActivatePaneDirection "Down" },
   { key = "e", mods = "ALT",    action = wezterm.action.ActivatePaneDirection "Up" },
   { key = "o", mods = "ALT",    action = wezterm.action.ActivatePaneDirection "Right" },
 
- -- 调整尺寸 resize pane
+ -- resize pane
   { key = "Y", mods = "ALT",    action = wezterm.action.AdjustPaneSize { "Left", 5 } },
   { key = "N", mods = "ALT",    action = wezterm.action.AdjustPaneSize { "Down", 5 } },
   { key = "E", mods = "ALT",    action = wezterm.action.AdjustPaneSize { "Up", 5 } },
   { key = "O", mods = "ALT",    action = wezterm.action.AdjustPaneSize { "Right", 5 } },
 
--- 窗口
+-- activate tab
   { key = "1", mods = "ALT",    action = wezterm.action.ActivateTab(0) },
   { key = "2", mods = "ALT",    action = wezterm.action.ActivateTab(1) },
   { key = "3", mods = "ALT",    action = wezterm.action.ActivateTab(2) },
