@@ -28,6 +28,7 @@ config = {
   window_background_opacity = 0.9,
   prefer_egl = true,
   --default_prog = { "powershell.exe", "-NoLogo" }
+  default_prog = { 'wsl.exe' },
   initial_cols = 80,
 
 
