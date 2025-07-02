@@ -25,7 +25,8 @@ config = {
   cursor_blink_rate = 500,
   term = "xterm-256color", -- Set the terminal type
   cell_width = 0.9,
-  window_background_opacity = 0.9,
+  window_background_opacity = 0.85,
+  text_background_opacity = 0.85,
   prefer_egl = true,
   --default_prog = { "powershell.exe", "-NoLogo" }
   default_prog = { 'wsl.exe' },
@@ -95,7 +96,7 @@ config = {
       action = wezterm.action_callback(function(window, _)
         local overrides = window:get_config_overrides() or {}
         if overrides.window_background_opacity == 1.0 then
-          overrides.window_background_opacity = 0.9
+          overrides.window_background_opacity = 0.85
         else
           overrides.window_background_opacity = 1.0
         end
@@ -113,14 +114,18 @@ config = {
  
   -- color
   default_cursor_style = "BlinkingBlock",
+  --color_scheme = "Nord (Gogh)",
   color_scheme = "Cloud (terminal.sexy)",
-
 
   colors = {
     -- background = '#3b224c',
     -- background = "#181616", -- vague.nvim bg
     -- background = "#080808", -- almost black
-    background = "#0c0b0f", -- dark purple
+    --background = "#0c0b0f", -- dark purple
+    
+    --background = "#302c3b", -- dark purple
+    background = "#3c374a", -- dark purple
+    
     -- background = "#020202", -- dark purple
     -- background = "#17151c", -- brighter purple
     -- background = "#16141a",
