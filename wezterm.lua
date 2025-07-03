@@ -6,38 +6,39 @@ local act = wezterm.action
 local config = wezterm.config_builder()
 
 -- color scheme toggling
-wezterm.on("toggle-colorscheme", function(window, pane)
-	local overrides = window:get_config_overrides() or {}
-	if overrides.color_scheme == "Zenburn" then
-		overrides.color_scheme = "Cloud (terminal.sexy)"
-	else
-		overrides.color_scheme = "Zenburn"
-	end
-	window:set_config_overrides(overrides)
-end)
+--wezterm.on("toggle-colorscheme", function(window, pane)
+--  local overrides = window:get_config_overrides() or {}
+--  if overrides.color_scheme == "Zenburn" then
+--    overrides.color_scheme = "Cloud (terminal.sexy)"
+--  else
+--    overrides.color_scheme = "Zenburn"
+--  end
+--  window:set_config_overrides(overrides)
+--end)
 
 config = {
-  -- automatioally_reload_config = true
-  front_end = "OpenGL",                            
-  max_fps = 144,
-  default_cursor_style = "BlinkingBlock",
-  animation_fps = 1,         
-  cursor_blink_rate = 500,
-  term = "xterm-256color", -- Set the terminal type
-  cell_width = 0.9,
-  window_background_opacity = 0.85,
-  text_background_opacity = 0.85,
-  prefer_egl = true,
-  --default_prog = { "powershell.exe", "-NoLogo" }
-  default_prog = { 'wsl.exe' },
-  initial_cols = 80,
+  --front_end = "OpenGL",                            
+  --front_end = "Software",                            
+  front_end = "WebGpu",                            
+  --default_prog = { "powershell.exe", "-NoLogo" },
+  default_prog = { "powershell.exe" },
+  --default_prog = { 'wsl.exe' },
+  --initial_cols = 80,
+  --max_fps = 144,
+  --animation_fps = 1,         
+  --cursor_blink_rate = 500,
+  --term = "xterm-256color", -- Set the terminal type
+  --cell_width = 0.9,
+  window_background_opacity = 0.9,
+  --text_background_opacity = 0.85,
+  --prefer_egl = true,
 
 
   -- tab 
-  enable_tab_bar = false,
-  --hide_tab_bar_if_only_one_tab = true
-  --use_fancy_tab_bar = false
-  --tab_bar_at_bottom = true
+  --enable_tab_bar = false,
+  hide_tab_bar_if_only_one_tab = true,
+  use_fancy_tab_bar = false,
+  --tab_bar_at_bottom = true,
   
   -- window
   --window_decorations = "NONE | RESIZE"
@@ -165,11 +166,11 @@ config = {
   },
   
 
-  window_frame = {
-    font = wezterm.font({ family = "Iosevka Custom", weight = "Regular" }),
-    active_titlebar_bg = "#0c0b0f",
+  --window_frame = {
+    --font = wezterm.font({ family = "Iosevka Custom", weight = "Regular" }),
+    --active_titlebar_bg = "#0c0b0f",
     -- active_titlebar_bg = "#181616",
-  },
+  --},
 
 
 }
